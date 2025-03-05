@@ -1,0 +1,190 @@
+.desktop-header {
+    background-color: $primary-color;
+    color: white;
+
+    @media (max-width:991px) {
+        display: none;
+    }
+
+    .top-header {
+
+        padding: 15px 0;
+        border-bottom: 1px solid #a2a2a2;
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            ul {
+                display: flex;
+                gap: 20px;
+
+                li {
+                    font-size: 14px;
+
+                }
+            }
+
+            .right-content {
+                display: flex;
+                gap: 50px;
+
+                ul {
+                    gap: 40px;
+
+                }
+
+                select {
+                    background-color: transparent;
+                    border: none;
+                    color: white;
+                }
+            }
+        }
+    }
+
+    .nav-bar {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        align-items: center;
+        padding-block: 20px;
+
+        nav {
+            ul {
+                display: flex;
+                gap: 40px;
+
+                li {
+                    font-size: 14px;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .right-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+
+            button {
+                background-color: transparent;
+                border: none;
+                font-size: 24px;
+                color: white;
+                position: relative;
+
+                span {
+                    position: absolute;
+                    bottom: -10px;
+                    right: -10px;
+                    background-color: $secondary-color;
+                    color: white;
+                    height: 20px;
+                    width: 20px;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .search-bar {
+        display: flex;
+        gap: 100px;
+        align-items: center;
+        padding-bottom: 30px;
+
+        .category-box {
+            background-color: $secondary-color;
+            color: black;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+
+            ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 20px;
+                border: 1px solid gainsboro;
+                border-radius: 10px;
+                display: none;
+
+                li {
+                    padding-bottom: 20px;
+                    text-transform: capitalize;
+                    font-size: 14px;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+
+            }
+
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+        }
+
+        form {
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            flex-grow: 1;
+            display: grid;
+            grid-template-columns: auto 3fr 1fr;
+            gap: 10px;
+
+            button {
+                background-color: transparent;
+                border: none;
+            }
+
+            input {
+                border: none;
+
+                &:focus-visible {
+                    outline: none;
+                }
+
+            }
+
+            select {
+                border: none;
+
+                &:focus-visible {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.responsive-header {
+    display: none;
+
+    @media (max-width:991px) {
+        display: block;
+    }
+
+    .container {
+        @include flex-between;
+        padding: 15px 0;
+
+    }
+}

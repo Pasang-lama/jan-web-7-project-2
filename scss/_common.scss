@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: 100%;
+    padding-inline: 15px;
+    margin: 0px auto;
+
+    @media (min-width: 576px) {
+        max-width: 540px;
+    }
+
+
+    @media (min-width: 768px) {
+        max-width: 720px;
+    }
+
+    @media (min-width: 992px) {
+        max-width: 960px;
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1140px;
+    }
+
+    @media (min-width: 1400px) {
+        max-width: 1320px;
+    }
+}
+
+
+
+
+.margin-top {
+    margin-top: 80px;
+}
+
+.section-title {
+    font-size: 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $primary-color;
+
+    @media (max-width:768px) {
+        font-size: 24px;
+
+    }
+}
+
+.section-header {
+    @include flex-between;
+    margin-bottom: 30px;
+
+    a {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 600;
+        color: $primary-color;
+        position: relative;
+
+        &::before {
+            content: "";
+            height: 2px;
+            width: 40px;
+            background-color: $primary-color;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            transition: all 0.4s linear;
+        }
+
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+    .wrapper{
+        display: flex;
+        gap: 50px;
+        a::before{
+            display: none;
+        }
+        a.active::before{
+            display: block;
+        }
+    }
+}
